@@ -28,6 +28,13 @@
   fp16_tflops: 165
   usd_per_hr: 0.44
 
+- name: RTX 5090
+  vram_gb: 32
+  mem_bw_gbps: 1792
+  fp16_tflops: 419
+  usd_per_hr: 1.20
+  note: "Blackwell (SM 12.0); amitb-gpu dev machine — GDDR7 32 GB"
+
 - name: T4
   vram_gb: 16
   mem_bw_gbps: 320
