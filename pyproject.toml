@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-fit"
+version = "0.1.0"
+description = "Tell me the GPU, quantization, and serving flags to run any LLM — backed by real benchmarks, not vibes."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "amitb-gpu" }]
+keywords = ["llm", "gpu", "vllm", "inference", "quantization", "cost", "cuda", "serving", "vram"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "pyyaml>=6.0",
+  "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/amitb-gpu/gpu-fit"
+Repository = "https://github.com/amitb-gpu/gpu-fit"
+
+[project.scripts]
+gpu-fit = "gpu_fit.cli:main"
+
+[tool.setuptools]
+packages = ["gpu_fit"]
+
+[tool.setuptools.package-data]
+gpu_fit = ["data/*.yaml"]

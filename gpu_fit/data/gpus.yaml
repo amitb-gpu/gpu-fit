@@ -1,0 +1,83 @@
+# GPU spec + price table.
+#
+# vram_gb      : usable device memory, GiB
+# mem_bw_gbps  : peak memory bandwidth, GB/s (decimal) — drives decode throughput
+# fp16_tflops  : peak tensor FP16 throughput (informational; prefill-bound only)
+# usd_per_hr   : approximate on-demand price, blended hyperscaler/community, as of 2026-07.
+#                PRICES MOVE. Edit these to match the cloud you actually rent from.
+# local        : true = a card you own, not rented (usd_per_hr omitted)
+#
+# Add your own rows freely — the tool reads this file at runtime.
+
+- name: RTX A1000 6GB
+  vram_gb: 6
+  mem_bw_gbps: 192
+  fp16_tflops: 44
+  local: true
+  note: "amitb-gpu reference card (Ampere SM 8.6) — measured in ampere-llm-perf-lab"
+
+- name: RTX 3090
+  vram_gb: 24
+  mem_bw_gbps: 936
+  fp16_tflops: 71
+  usd_per_hr: 0.22
+
+- name: RTX 4090
+  vram_gb: 24
+  mem_bw_gbps: 1008
+  fp16_tflops: 165
+  usd_per_hr: 0.44
+
+- name: T4
+  vram_gb: 16
+  mem_bw_gbps: 320
+  fp16_tflops: 65
+  usd_per_hr: 0.35
+
+- name: L4
+  vram_gb: 24
+  mem_bw_gbps: 300
+  fp16_tflops: 121
+  usd_per_hr: 0.70
+
+- name: A10G
+  vram_gb: 24
+  mem_bw_gbps: 600
+  fp16_tflops: 125
+  usd_per_hr: 0.75
+
+- name: L40S
+  vram_gb: 48
+  mem_bw_gbps: 864
+  fp16_tflops: 181
+  usd_per_hr: 1.20
+
+- name: A100 40GB
+  vram_gb: 40
+  mem_bw_gbps: 1555
+  fp16_tflops: 156
+  usd_per_hr: 1.40
+
+- name: A100 80GB
+  vram_gb: 80
+  mem_bw_gbps: 2039
+  fp16_tflops: 156
+  usd_per_hr: 1.80
+
+- name: H100 80GB PCIe
+  vram_gb: 80
+  mem_bw_gbps: 2000
+  fp16_tflops: 756
+  usd_per_hr: 2.70
+
+- name: H100 80GB SXM
+  vram_gb: 80
+  mem_bw_gbps: 3350
+  fp16_tflops: 989
+  usd_per_hr: 3.20
+
+- name: H200 141GB
+  vram_gb: 141
+  mem_bw_gbps: 4800
+  fp16_tflops: 989
+  usd_per_hr: 4.20
